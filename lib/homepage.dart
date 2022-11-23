@@ -1,0 +1,414 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
+class homepage extends StatefulWidget {
+  const homepage({Key? key}) : super(key: key);
+
+  @override
+  State<homepage> createState() => _homepageState();
+}
+
+class _homepageState extends State<homepage> {
+  int _currentindex = 0;
+
+  final tabs = [
+    SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Hi Axel',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red),
+              ),
+              const Text(
+                'Nice to see you again!',
+                style: TextStyle(fontSize: 20, color: Colors.black),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              InkWell(
+                splashColor: Colors.black,
+                child: Ink(
+                  height: 70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey)),
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text('0 points',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red)),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('How do I win big?')
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: Image(
+                          image: AssetImage('images/coin.jpg'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                onTap: () {},
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              InkWell(
+                splashColor: Colors.black,
+                child: Ink(
+                  height: 70,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.grey)),
+                  child: Row(
+                    children: const [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Icon(
+                        Icons.shopping_basket_rounded,
+                        color: Colors.red,
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        'Shop with your points',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+                onTap: () {},
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Text(
+                '''WHAT'S NEW''',
+                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    border: Border.all(color: Colors.grey)),
+                child: Card(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: Column(children: [
+                    const SizedBox(
+                      width: double.infinity,
+                      height: 130,
+                      child: Image(
+                          image: AssetImage('images/main.jpg'),
+                          fit: BoxFit.cover),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      height: 50,
+                      width: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            '''Let's Go to Shell, New Price!''',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('Valid until 30/11/2022')
+                        ],
+                      ),
+                    )
+                  ]),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+    Center(
+      child: Text('Stations'),
+    ),
+    Center(
+      child: Text('Qr'),
+    ),
+    Center(
+      child: Text('Rewards'),
+    ),
+    SafeArea(
+        child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            InkWell(
+              child: Ink(
+                height: 70,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    border: Border.all(color: Colors.grey)),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Axel',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.red)),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text('View and edit profile')
+                    ],
+                  ),
+                ),
+              ),
+              onTap: () {},
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            InkWell(
+                child: Ink(
+                  height: 50,
+                  child: Row(
+                    children: [
+                      Icon(Icons.note_alt),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text('Transactions')
+                    ],
+                  ),
+                ),
+                onTap: () {}),
+            Divider(
+              thickness: 1,
+            ),
+            InkWell(
+                child: Ink(
+                  height: 50,
+                  child: Row(
+                    children: [
+                      Icon(Icons.wallet_giftcard),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text('Redemptions')
+                    ],
+                  ),
+                ),
+                onTap: () {}),
+            Divider(
+              thickness: 1,
+            ),
+            InkWell(
+                child: Ink(
+                  height: 50,
+                  child: Row(
+                    children: [
+                      Icon(Icons.money),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text('Other Activities')
+                    ],
+                  ),
+                ),
+                onTap: () {}),
+            Divider(
+              thickness: 1,
+            ),
+            InkWell(
+                child: Ink(
+                  height: 50,
+                  child: Row(
+                    children: [
+                      Icon(Icons.traffic),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text('App tour')
+                    ],
+                  ),
+                ),
+                onTap: () {}),
+            Divider(
+              thickness: 1,
+            ),
+            InkWell(
+                child: Ink(
+                  height: 50,
+                  child: Row(
+                    children: [
+                      Icon(Icons.help),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text('Help')
+                    ],
+                  ),
+                ),
+                onTap: () {}),
+            Divider(
+              thickness: 1,
+            ),
+            InkWell(
+                child: Ink(
+                  height: 50,
+                  child: Row(
+                    children: [
+                      Icon(Icons.settings),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text('Settings')
+                    ],
+                  ),
+                ),
+                onTap: () {}),
+            Divider(
+              thickness: 1,
+            ),
+            InkWell(
+                child: Ink(
+                  height: 30,
+                  child: Row(
+                    children: [Text('Legal')],
+                  ),
+                ),
+                onTap: () {}),
+            Divider(
+              thickness: 1,
+            ),
+            InkWell(
+                child: Ink(
+                  height: 30,
+                  child: Row(
+                    children: [Text('Software Version')],
+                  ),
+                ),
+                onTap: () {}),
+            Divider(
+              thickness: 1,
+            ),
+            InkWell(
+                child: Ink(
+                  height: 30,
+                  child: Row(
+                    children: [Text('Sign out')],
+                  ),
+                ),
+                onTap: () {}),
+            Divider(
+              thickness: 1,
+            ),
+          ],
+        ),
+      ),
+    )),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: tabs[_currentindex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentindex,
+        type: BottomNavigationBarType.fixed,
+        selectedFontSize: 15,
+        iconSize: 18,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(
+              Icons.home,
+              color: Colors.grey,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map_outlined),
+            activeIcon: Icon(
+              Icons.map,
+              color: Colors.grey,
+            ),
+            label: 'Stations',
+          ),
+          BottomNavigationBarItem(
+            icon: Image(
+              height: 20,
+              width: 20,
+              image: AssetImage('images/shell.png'),
+            ),
+            label: 'My Card',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wallet_giftcard),
+            activeIcon: Icon(
+              Icons.wallet_giftcard,
+              color: Colors.green,
+            ),
+            label: 'Rewards',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            activeIcon: Icon(
+              Icons.person,
+              color: Color(0xff77b5fe),
+            ),
+            label: 'Profile',
+          ),
+        ],
+        onTap: (index) {
+          setState(() {
+            _currentindex = index;
+          });
+        },
+      ),
+    );
+  }
+}

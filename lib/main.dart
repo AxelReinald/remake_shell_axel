@@ -1,11 +1,17 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:remake_shell_axel/src/bloc/auth_bloc/bloc/auth_bloc.dart';
+import 'package:remake_shell_axel/src/repository/reop_auth.dart';
 import 'LoginPage.dart';
 
 void main() {
   runApp(const MyApp());
+
+  // AuthRepo authRepo = AuthRepo();
+  // authRepo.login("eve.holt@reqres.in", "cityslicka");
 }
 
 class MyApp extends StatelessWidget {
@@ -14,10 +20,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      home: SplashScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AuthBloc(AuthRepo()),
+        ),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        home: SplashScreen(),
+      ),
     );
   }
 }

@@ -139,22 +139,25 @@ class _homepageState extends State<homepage> {
                     const SizedBox(
                       height: 10,
                     ),
-                    SizedBox(
-                      height: 50,
-                      width: double.infinity,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            '''Let's Go to Shell, New Price!''',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text('Valid until 30/11/2022')
-                        ],
+                    InkWell(
+                      child: SizedBox(
+                        height: 50,
+                        width: double.infinity,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              '''Let's Go to Shell, New Price!''',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text('Valid until 30/11/2022')
+                          ],
+                        ),
                       ),
+                      onTap: () {},
                     )
                   ]),
                 ),
@@ -170,9 +173,117 @@ class _homepageState extends State<homepage> {
     Center(
       child: Text('Qr'),
     ),
-    Center(
-      child: Text('Rewards'),
-    ),
+    SafeArea(
+        child: SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Offers',
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'SHELL GO+ OFFERS',
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 15),
+              ],
+            ),
+          ),
+          Ink(
+            height: 200,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                border: Border.all(color: Colors.grey)),
+            child: Card(
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              child: Column(children: [
+                const SizedBox(
+                  width: double.infinity,
+                  height: 130,
+                  child: Image(
+                      image: AssetImage('images/coffee.jpg'),
+                      fit: BoxFit.cover),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                InkWell(
+                  child: SizedBox(
+                    height: 50,
+                    width: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          '''10% off Costa Express Drink''',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  onTap: () {},
+                ),
+              ]),
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Ink(
+            height: 200,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                border: Border.all(color: Colors.grey)),
+            child: Card(
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              child: Column(children: [
+                const SizedBox(
+                  width: double.infinity,
+                  height: 130,
+                  child: Image(
+                      image: AssetImage('images/fuel.jpg'), fit: BoxFit.cover),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                InkWell(
+                  child: SizedBox(
+                    height: 50,
+                    width: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          '''10% off Shell fuel''',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  onTap: () {},
+                ),
+              ]),
+            ),
+          )
+        ],
+      ),
+    )),
     SafeArea(
         child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -191,7 +302,7 @@ class _homepageState extends State<homepage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text('Axel',
                           style: TextStyle(
                               fontSize: 20,
@@ -207,14 +318,14 @@ class _homepageState extends State<homepage> {
               ),
               onTap: () {},
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             InkWell(
                 child: Ink(
                   height: 50,
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(Icons.note_alt),
                       SizedBox(
                         width: 15,
@@ -224,14 +335,14 @@ class _homepageState extends State<homepage> {
                   ),
                 ),
                 onTap: () {}),
-            Divider(
+            const Divider(
               thickness: 1,
             ),
             InkWell(
                 child: Ink(
                   height: 50,
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(Icons.wallet_giftcard),
                       SizedBox(
                         width: 15,
@@ -241,14 +352,14 @@ class _homepageState extends State<homepage> {
                   ),
                 ),
                 onTap: () {}),
-            Divider(
+            const Divider(
               thickness: 1,
             ),
             InkWell(
                 child: Ink(
                   height: 50,
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(Icons.money),
                       SizedBox(
                         width: 15,
@@ -258,14 +369,14 @@ class _homepageState extends State<homepage> {
                   ),
                 ),
                 onTap: () {}),
-            Divider(
+            const Divider(
               thickness: 1,
             ),
             InkWell(
                 child: Ink(
                   height: 50,
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(Icons.traffic),
                       SizedBox(
                         width: 15,
@@ -275,14 +386,14 @@ class _homepageState extends State<homepage> {
                   ),
                 ),
                 onTap: () {}),
-            Divider(
+            const Divider(
               thickness: 1,
             ),
             InkWell(
                 child: Ink(
                   height: 50,
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(Icons.help),
                       SizedBox(
                         width: 15,
@@ -292,14 +403,14 @@ class _homepageState extends State<homepage> {
                   ),
                 ),
                 onTap: () {}),
-            Divider(
+            const Divider(
               thickness: 1,
             ),
             InkWell(
                 child: Ink(
                   height: 50,
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(Icons.settings),
                       SizedBox(
                         width: 15,
@@ -309,40 +420,40 @@ class _homepageState extends State<homepage> {
                   ),
                 ),
                 onTap: () {}),
-            Divider(
+            const Divider(
               thickness: 1,
             ),
             InkWell(
                 child: Ink(
                   height: 30,
                   child: Row(
-                    children: [Text('Legal')],
+                    children: const [Text('Legal')],
                   ),
                 ),
                 onTap: () {}),
-            Divider(
+            const Divider(
               thickness: 1,
             ),
             InkWell(
                 child: Ink(
                   height: 30,
                   child: Row(
-                    children: [Text('Software Version')],
+                    children: const [Text('Software Version')],
                   ),
                 ),
                 onTap: () {}),
-            Divider(
+            const Divider(
               thickness: 1,
             ),
             InkWell(
                 child: Ink(
                   height: 30,
                   child: Row(
-                    children: [Text('Sign out')],
+                    children: const [Text('Sign out')],
                   ),
                 ),
                 onTap: () {}),
-            Divider(
+            const Divider(
               thickness: 1,
             ),
           ],

@@ -20,13 +20,6 @@ class _LoginPageState extends State<LoginPage> {
   final email = TextEditingController();
   final password = TextEditingController();
 
-  // Future signIn() async {
-  //   await FirebaseAuth.instance.signInWithEmailAndPassword(
-  //     email: _emailController.text.trim(),
-  //     password: _passController.text.trim(),
-  //   );
-  // }
-
   @override
   void initState() {
     // TODO: implement initState
@@ -181,22 +174,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                IconButton(
-                  onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => const homepage()),
-                    // );
-                    print("tes");
-                  },
-                  icon: const Icon(
-                    Icons.arrow_right_alt_rounded,
-                    size: 20,
-                  ),
-                )
               ],
             ),
           ),

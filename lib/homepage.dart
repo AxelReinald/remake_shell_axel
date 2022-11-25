@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class homepage extends StatefulWidget {
   const homepage({Key? key}) : super(key: key);
@@ -10,12 +11,18 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
+  static const double _defaultLat = -6.225871622158405;
+  static const double _defaultLng = 107.00104421092891;
+
+  static const CameraPosition _defaultlocation =
+      CameraPosition(target: LatLng(_defaultLat, _defaultLng), zoom: 15);
   int _currentindex = 0;
 
   final tabs = [
+    //Home
     SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -167,15 +174,39 @@ class _homepageState extends State<homepage> {
         ),
       ),
     ),
-    Center(
-      child: Text('Stations'),
-    ),
-    Center(
-      child: Text('Qr'),
-    ),
+    //Stations
+    SafeArea(
+        child: Stack(
+      children: [GoogleMap(initialCameraPosition: _defaultlocation)],
+    )),
+    //My Card
     SafeArea(
         child: SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Your Shell Go+ card',
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    )),
+    //Rewards
+    SafeArea(
+        child: SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Column(
         children: [
           Container(
@@ -284,9 +315,10 @@ class _homepageState extends State<homepage> {
         ],
       ),
     )),
+    //Profile
     SafeArea(
         child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: SingleChildScrollView(
         child: Column(
           children: [

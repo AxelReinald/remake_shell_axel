@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFFD500),
+      backgroundColor: Colors.white,
       body: SafeArea(
           child: Center(
         child: SingleChildScrollView(
@@ -41,14 +41,24 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 150,
-                  height: 150,
+                  width: 50,
+                  height: 50,
                   child: const Image(
                     image: AssetImage('images/shell.png'),
                   ),
                 ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'Welcome to Shell Asia',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red),
+                ),
                 const SizedBox(
-                  height: 30,
+                  height: 100,
                 ),
                 //email
                 TextFormField(
@@ -93,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                       value!.isEmpty ? 'Password cannot be blank' : null,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 50,
                 ),
                 BlocListener<AuthBloc, AuthState>(
                   listener: (context, state) {
@@ -133,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                     }
                   },
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: GestureDetector(
                       onTap: () {
                         final FormState? form = _formkey.currentState;
@@ -156,16 +166,17 @@ class _LoginPageState extends State<LoginPage> {
                         }
                       },
                       child: Container(
-                        padding: const EdgeInsets.all(20),
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: const Color(0xffFFD500),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: const Center(
                           child: Text(
                             'Sign In',
                             style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18),
                           ),
@@ -174,6 +185,16 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'By continuing, I accept the\n Terms and conditions. Please refer to our \n Privacy Notice',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    height: 1.5,
+                  ),
+                )
               ],
             ),
           ),

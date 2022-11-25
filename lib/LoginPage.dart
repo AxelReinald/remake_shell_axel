@@ -160,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                                       'Email/Password tidak boleh kosong',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: 15))));
                           print('Form is invalid');
                         }
@@ -186,7 +186,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 150,
                 ),
                 Text(
                   'By continuing, I accept the\n Terms and conditions. Please refer to our \n Privacy Notice',

@@ -46,6 +46,10 @@ class _homepageState extends State<homepage> {
                 child: Ink(
                   height: 70,
                   decoration: BoxDecoration(
+                      image: new DecorationImage(
+                        image: new AssetImage("images/party.jpg"),
+                        fit: BoxFit.cover,
+                      ),
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.white,
                       border: Border.all(color: Colors.grey)),
@@ -69,15 +73,6 @@ class _homepageState extends State<homepage> {
                           ),
                           Text('How do I win big?')
                         ],
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      const Expanded(
-                        flex: 1,
-                        child: Image(
-                          image: AssetImage('images/coin.jpg'),
-                        ),
                       ),
                     ],
                   ),
@@ -175,10 +170,9 @@ class _homepageState extends State<homepage> {
       ),
     ),
     //Stations
-    SafeArea(
-        child: Stack(
+    Stack(
       children: [GoogleMap(initialCameraPosition: _defaultlocation)],
-    )),
+    ),
     //My Card
     SafeArea(
         child: SingleChildScrollView(

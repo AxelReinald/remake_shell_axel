@@ -47,10 +47,10 @@ class _LoginPageState extends State<LoginPage> {
                     image: AssetImage('images/shell.png'),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
-                Text(
+                const Text(
                   'Welcome to Shell Asia',
                   style: TextStyle(
                       fontSize: 20,
@@ -185,13 +185,13 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 150,
                 ),
-                Text(
+                const Text(
                   'By continuing, I accept the\n Terms and conditions. Please refer to our \n Privacy Notice',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     height: 1.5,
                   ),
                 )

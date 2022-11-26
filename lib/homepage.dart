@@ -171,29 +171,190 @@ class _homepageState extends State<homepage> {
     ),
     //Stations
     Stack(
-      children: [GoogleMap(initialCameraPosition: _defaultlocation)],
+      children: [const GoogleMap(initialCameraPosition: _defaultlocation)],
     ),
     //My Card
     SafeArea(
         child: SingleChildScrollView(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Column(
         children: [
           Container(
+            color: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             width: double.infinity,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Your Shell Go+ card',
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red),
-                )
+                Container(
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Your Shell Go+ card',
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'View your member benefits',
+                            style: TextStyle(
+                                fontWeight: FontWeight.normal,
+                                decoration: TextDecoration.underline,
+                                color: Colors.black),
+                          ))
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color(0xffFFD500),
+                      border: Border.all(color: Colors.grey)),
+                ),
               ],
             ),
           ),
+          const SizedBox(
+            height: 15,
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            width: double.infinity,
+            height: 30,
+            color: Colors.grey.shade100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text('Your Rewards'),
+                IconButton(onPressed: () {}, icon: const Icon(Icons.refresh))
+              ],
+            ),
+          ),
+          InkWell(
+              child: Ink(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                height: 50,
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.card_giftcard,
+                      color: Colors.red,
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    const Text(
+                      'Redeem Shell Go+ Points\n for Coffee Discount',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    MaterialButton(
+                      onPressed: () {},
+                      color: Colors.blue.shade900,
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.check,
+                            color: Colors.white,
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          const Text(
+                            'Selected',
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              onTap: () {}),
+          const Divider(
+            thickness: 1,
+          ),
+          InkWell(
+              child: Ink(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                height: 50,
+                child: Row(
+                  children: [
+                    const Icon(Icons.card_giftcard, color: Colors.red),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    const Text(
+                      'Free Nitrogen Refill',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    MaterialButton(
+                      onPressed: () {},
+                      color: Colors.blue.shade900,
+                      child: Row(
+                        children: [
+                          const Icon(Icons.check, color: Colors.white),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          const Text('Selected',
+                              style: TextStyle(color: Colors.white)),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              onTap: () {}),
+          const Divider(
+            thickness: 1,
+          ),
+          InkWell(
+              child: Ink(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                height: 50,
+                child: Row(
+                  children: [
+                    const Icon(Icons.card_giftcard, color: Colors.red),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    const Text(
+                      'Monday is Coffee Day',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    MaterialButton(
+                      onPressed: () {},
+                      color: Colors.blue.shade900,
+                      child: Row(
+                        children: [
+                          const Icon(Icons.check, color: Colors.white),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          const Text('Selected',
+                              style: TextStyle(color: Colors.white)),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              onTap: () {}),
+          const Divider()
         ],
       ),
     )),
@@ -208,21 +369,21 @@ class _homepageState extends State<homepage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Offers',
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: Colors.red),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   'SHELL GO+ OFFERS',
                   style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
               ],
             ),
           ),
@@ -265,7 +426,7 @@ class _homepageState extends State<homepage> {
               ]),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Ink(

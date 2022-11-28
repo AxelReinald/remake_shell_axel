@@ -216,10 +216,26 @@ class _homepageState extends State<homepage> {
                 ),
                 Container(
                   height: 200,
+                  width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: const Color(0xffFFD500),
                       border: Border.all(color: Colors.grey)),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        height: 130,
+                        width: 100,
+                        child: Image(
+                            image: AssetImage('images/qr.png'),
+                            fit: BoxFit.cover),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

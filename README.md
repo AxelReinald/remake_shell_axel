@@ -1,6 +1,6 @@
 # remake_shell_axel
 
-A new Flutter project.
+Remake mobile shell Application
 
 ## Getting Started
 
